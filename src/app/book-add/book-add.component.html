@@ -6,14 +6,17 @@
 </div>
 <div class="form-group mt-3">
     <div class="col-md-3 form-group">
-        <label>Name</label>
-        <input class="form-control" name="title" [(ngModel)]="book.name" />
+        <label>Name*</label>
+        <input class="form-control" name="title" [(ngModel)]="book.name" #name="ngModel" required />
+        <div [hidden]="name.valid || name.untouched" class="text-danger">
+            Name is required
+        </div>
     </div>
     <div class="col-md-3 mt-2 form-group">
         <label>Author</label>
         <input class="form-control" name="title" [(ngModel)]="book.author" />
     </div>
     <div class="col-md-3 mt-5 form-group">
-        <button class="btn btn-primary" (click)="addBook()">Create</button>
+        <button class="btn btn-primary" (click)="addBook()" [disabled]="name.invalid" >Create</button>
     </div>
 </div>
