@@ -1,15 +1,15 @@
 ﻿<h1>All Books</h1>
 <div class="form-group">
-    <div class="row form-group">
-        <div class="col-md-2">
-            <a class="btn btn-success form-control" [routerLink]="['/add']">Create new</a>
+    <div class="row form-group w-25">
+        <div class="col-md-6">
+            <a class="btn btn-success form-control" [routerLink]="['/add']">Create</a>
         </div>
     </div>
-    <div class="row form-group mt-5">
-        <div class="col-md-2">
+    <div class="row form-group mt-5 w-50">
+        <div class="col-md-6">
             <input type="text" (keyup.enter)="applySearch()" placeholder="filter" class="form-control" [(ngModel)]="searchString" />
         </div>
-        <div class="col-md-1">
+        <div class="col-md-4">
             <input type="button" value="Search" class="form-control" (click)="applySearch()" />
         </div>
     </div>
